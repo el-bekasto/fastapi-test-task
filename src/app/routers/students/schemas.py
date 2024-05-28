@@ -15,6 +15,7 @@ class GetStudentSchema(CreateStudentSchema):
     Схема получения объекта студента. Просто добавляет поля айди и дат изменений в схему создания.
     """
     id: int
+    rating: float | None
     created_at: datetime
     updated_at: datetime | None
 

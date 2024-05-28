@@ -8,7 +8,7 @@ from src.app.dependencies import get_session
 router = APIRouter(prefix='/student')
 
 
-@router.post('', response_model=GetStudentSchema)
+@router.post('', response_model=GetStudentSchema, status_code=201)
 async def create_student(student: CreateStudentSchema, session=Depends(get_session)):
     """
     Эндпоинт создания студента.
