@@ -6,6 +6,9 @@ from src.db.models import Student
 
 
 def create_student_service(student: CreateStudentSchema, session):
+    """
+    Логика создания студента
+    """
     student = Student(**dict(student))
     session.add(student)
     session.commit()
@@ -13,6 +16,9 @@ def create_student_service(student: CreateStudentSchema, session):
 
 
 def get_student_service(student_id: int, session):
+    """
+    Логика получения студента
+    """
     student = session.query(Student).get(student_id)
     if not student:
         raise HTTPException(status_code=404, detail=f'Student with id {student} not found.')
@@ -20,6 +26,9 @@ def get_student_service(student_id: int, session):
 
 
 def patch_student_service(student_id: int, updated_student: PatchStudentSchema, session):
+    """
+    Логика изменения существующего студента
+    """
     student = session.query(Student).get(student_id)
     if not student:
         raise HTTPException(status_code=404, detail=f'Student with id {student_id} not found.')
@@ -30,6 +39,9 @@ def patch_student_service(student_id: int, updated_student: PatchStudentSchema, 
 
 
 def delete_student_service(student_id: int, session):
+    """
+    Логика удаления студента
+    """
     student = session.query(Student).get(student_id)
     if not student:
         raise HTTPException(status_code=404, detail=f'Student with id {student_id} not found.')

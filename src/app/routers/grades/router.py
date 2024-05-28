@@ -18,10 +18,7 @@ router = APIRouter(prefix='/grade')
 @router.post('', response_model=GetGradeSchema, status_code=201)
 async def create_grade(grade: CreateGradeSchema, session=Depends(get_session)):
     """
-    Path-функция создания оценки.
-    :param grade: тело объекта оценки
-    :param session: сессия в БД
-    :return: тело оценки при успешном создании
+    Эндпоинт создания оценки.
     """
     return create_grade_service(grade, session)
 
@@ -29,10 +26,7 @@ async def create_grade(grade: CreateGradeSchema, session=Depends(get_session)):
 @router.get('/{grade_id}', response_model=GetGradeSchema)
 async def get_grade(grade_id: int, session=Depends(get_session)):
     """
-    Path-функция получения оценки.
-    :param grade_id: айди нужной оценки
-    :param session: сессия в БД
-    :return: тело оценки если такая есть
+    Эндпоинт получения оценки.
     """
     return get_grade_service(grade_id, session)
 
@@ -40,11 +34,7 @@ async def get_grade(grade_id: int, session=Depends(get_session)):
 @router.patch('/{grade_id}', response_model=GetGradeSchema)
 async def change_grade(grade_id: int, updated_grade: PatchGradeSchema, session=Depends(get_session)):
     """
-    Path-функция изменения оценки.
-    :param grade_id: айди оценки
-    :param updated_grade: обновленное тело оценки
-    :param session: сессия в БД
-    :return: тело оценки при успешном изменении
+    Эндпоинт изменения оценки.
     """
     return patch_grade_service(grade_id, updated_grade, session)
 
@@ -52,8 +42,6 @@ async def change_grade(grade_id: int, updated_grade: PatchGradeSchema, session=D
 @router.delete('/{grade_id}')
 async def delete_grade(grade_id: int, session=Depends(get_session)):
     """
-    Path-функция удаления оценки.
-    :param grade_id: айди оценки
-    :param session: сессия в БД
+    Эндпоинт удаления оценки.
     """
     return delete_grade_service(grade_id, session)

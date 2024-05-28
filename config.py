@@ -2,6 +2,9 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
+    """
+    Pydantic settings очень удобен для получения настроек из env файла
+    """
     DB_URL: str
 
     class Config:
