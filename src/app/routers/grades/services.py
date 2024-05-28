@@ -36,4 +36,6 @@ def delete_grade_service(grade_id: int, session):
     grade = session.query(Grade).get(grade_id)
     if not grade:
         raise HTTPException(status_code=404, detail=f'Grade with id {grade_id} not found.')
+    session.delete(grade)
+    session.commit()
     return {'success': 'Grade deleted.'}
