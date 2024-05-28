@@ -25,10 +25,11 @@
  - Добавил рейтинг ученика, который возвращает его среднюю оценку
 
 ## Как запустить?
- 1. Установить последнюю версию Python, создать папку проекта `fastapi_test`
- 2. Создать виртуальное окружение командой `python -m venv venv`
- 3. Активировать окружение (для Windows `.\venv\Scripts\activate`, для Linux source `.\venv\bin\activate`)
- 4. Установить нужные пакеты командой `pip install -r requirements.txt`
- 5. Выполнить миграции командой `alembic upgrade head`
- 6. Запустить сервер командой `uvicorn main:app --host localhost --port 80` (вместо 80 можно использовать другой порт)
- 7. Перейти к документации API по адресу http://localhost:80 (вместо 80 вставьте свой порт если он другой) и наслаждаться!
+ 1. Установить последнюю версию Python, создать папку проекта `fastapi_test` и перейти туда
+ 2. Клонировать туда проект командой `git clone https://github.com/el-bekasto/fastapi-test-task.git` и перейти в папку `fastapi-test-task`
+ 3. Создать виртуальное окружение командой `python -m venv venv`
+ 4. Активировать окружение (для Windows `.\venv\Scripts\activate`, для Linux source `.\venv\bin\activate`)
+ 5. Установить нужные пакеты командой `pip install -r requirements.txt`
+ 6. Выполнить миграции командой `alembic upgrade head`
+ 7. Запустить сервер командой `uvicorn main:app --host localhost --port 80` (вместо 80 можно использовать другой порт)
+ 8. Перейти к документации API по адресу http://localhost:80 (вместо 80 вставьте свой порт если он другой) и наслаждаться!
